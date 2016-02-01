@@ -3,16 +3,21 @@
 # ProxyAPI
 
 ##Overview
-* This is a Proxy API for [BetterDoctor](https://developer.betterdoctor.com/).
-* The API Searches for doctors based on name 
+
+This is a Proxy API for [BetterDoctor](developer.betterdoctor.com/).
+
+The API Searches for doctors based on name
 
 ##Setup & Running
-* Start the rails server using: 'rails server'
-* Run the following command:
-	`curl -v -X GET "http://localhost:3000/api/v1/doctors/search/doctor-name"`
 
-	
+Start the rails server using: 'rails server'
+
+Run the following command:
+
+`curl -v -X GET “localhost:3000/api/v1/doctors/search/doctor-name”`
 
 ##Input & Output
-* Request Parameters: Name of the doctor to search
-* Response PArameter: Result with all the information of the doctors searched 
+
+Request Parameters: Name of the doctor to search
+
+Response PArameter: Result with all the information of the doctors searched

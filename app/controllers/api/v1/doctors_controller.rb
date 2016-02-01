@@ -1,8 +1,7 @@
 class Api::V1::DoctorsController < ApplicationController
-  
   def search
   	if(Rails.cache.exist? params[:doctor_name])
-  		#IF present in cache then render
+  		#If present in cache then render
   		render json: Rails.cache.read(params[:doctor_name])
   	else
     	uri = URI.parse("https://api.betterdoctor.com/2015-01-27/doctors")
@@ -12,7 +11,7 @@ class Api::V1::DoctorsController < ApplicationController
 			request = Net::HTTP::Get.new uri
 			response = http.request request
 
-			#ONly store in cache when valid response
+			#Only store in cache when valid response
 			if(response.code.eql? "200")
 				Rails.cache.write(params[:doctor_name], response.body, expires_in: 1.minutes)
 			end
